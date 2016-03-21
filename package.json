@@ -1,0 +1,25 @@
+{
+  "name": "baud",
+  "version": "0.0.0",
+  "description": "A console for serial communication",
+  "main": "index.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andrewadare/baud.git"
+  },
+  "keywords": [
+    "baud",
+    "serial",
+    "console"
+  ],
+  "author": "Andrew Adare",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "keypress": "^0.2.1",
+    "node-julia": "^1.2.3"
+  }
+}
