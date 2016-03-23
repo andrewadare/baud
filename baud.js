@@ -8,6 +8,7 @@ if ( process.argv.length < 4 ) {
   process.exit( 1 );
 }
 
+// Arg list: 0 is node, 1 is this script
 const address = process.argv[ 2 ];
 const bps = +process.argv[ 3 ];
 
@@ -34,11 +35,13 @@ process.stdin.on( 'keypress', function( ch, key ) {
   }
   // Everything except return
   if ( typeof ch !== 'undefined' ) {
-    process.stdout.write( ch );
+    // process.stdout.write( ch );
+    julia.exec( 'write', port, ch );
   }
   // Print a newline '\n' instead of a carriage return '\r'
   if ( key && key.name === 'return' ) {
-    process.stdout.write( '\n' );
+    julia.exec( 'write', port, '\n' );
+    // process.stdout.write( '\n' );
   }
 } );
 
