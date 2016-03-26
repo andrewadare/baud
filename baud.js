@@ -30,7 +30,7 @@ keypress( process.stdin );
 // Keypress listener
 process.stdin.on( 'keypress', function( ch, key ) {
   // Ctrl+c or ctrl+d to exit
-  if ( key && key.ctrl && ( key.name == 'c' || key.name == 'd' ) ) {
+  if ( key && key.ctrl && ( key.name == 'd' ) ) {
     process.exit( 0 );
   }
   // Everything except return
@@ -58,7 +58,7 @@ function printBanner( bps ) {
   ];
   banner[ 0 ] += chalk.bgBlack( ' ' );
   banner[ 1 ] += chalk.yellow.bgBlack( ' Connected at ' + bps + ' BPS ' );
-  banner[ 2 ] += chalk.white.bgBlack( ' ctrl+c or ctrl+d to exit ' );
+  banner[ 2 ] += chalk.white.bgBlack( ' ctrl+d to exit ' );
 
   var padTo = Math.max( banner[ 1 ].length, banner[ 2 ].length );
 
